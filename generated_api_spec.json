@@ -1,0 +1,536 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API Documentation",
+    "description": "Generated from pytest tests with assertions\nGenerated from 3 endpoints with 5 test assertions",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000",
+      "description": "Local development server"
+    }
+  ],
+  "paths": {
+    "<BASE_URL>/api/v1/users": {
+      "post": {
+        "operationId": "post_<BASE_URL>_api_v1_users",
+        "summary": "POST <BASE_URL>/api/v1/users",
+        "description": "Generated from pytest test: test_create_user",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe",
+                      "minLength": 1,
+                      "enum": [
+                        "John Doe"
+                      ]
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "john@example.com",
+                      "minLength": 1,
+                      "enum": [
+                        "john@example.com"
+                      ]
+                    },
+                    "id": {
+                      "type": "integer",
+                      "example": 0,
+                      "minimum": 1
+                    },
+                    "active": {
+                      "type": "boolean",
+                      "example": true,
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "permissions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "active",
+                    "id",
+                    "email",
+                    "created_at",
+                    "name"
+                  ]
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "Created - Resource successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "John Doe",
+                      "minLength": 1,
+                      "enum": [
+                        "John Doe"
+                      ]
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "john@example.com",
+                      "minLength": 1,
+                      "enum": [
+                        "john@example.com"
+                      ]
+                    },
+                    "id": {
+                      "type": "integer",
+                      "example": 0,
+                      "minimum": 1
+                    },
+                    "active": {
+                      "type": "boolean",
+                      "example": true,
+                      "enum": [
+                        true
+                      ]
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "permissions": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "active",
+                    "id",
+                    "email",
+                    "created_at",
+                    "name"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-test-assertions": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "example": "<variable:user_data>",
+                "minLength": 1
+              },
+              "example": "<variable:user_data>"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer token123"
+          }
+        ]
+      }
+    },
+    "<BASE_URL>/api/v1/users/123": {
+      "get": {
+        "operationId": "get_<BASE_URL>_api_v1_users_123",
+        "summary": "GET <BASE_URL>/api/v1/users/123",
+        "description": "Generated from pytest test: test_get_user",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "age": {
+                      "type": "integer",
+                      "example": 18,
+                      "minimum": 18
+                    },
+                    "permissions": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "age"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-test-assertions": [],
+        "parameters": [
+          {
+            "name": "include",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "permissions",
+              "minLength": 1
+            },
+            "example": "permissions"
+          }
+        ]
+      },
+      "put": {
+        "operationId": "put_<BASE_URL>_api_v1_users_123",
+        "summary": "PUT <BASE_URL>/api/v1/users/123",
+        "description": "Generated from pytest test: test_update_user",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "example": "Jane Doe",
+                      "minLength": 1,
+                      "enum": [
+                        "Jane Doe"
+                      ]
+                    },
+                    "age": {
+                      "type": "integer",
+                      "example": 25,
+                      "enum": [
+                        25
+                      ]
+                    }
+                  },
+                  "required": [
+                    "age",
+                    "name"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "x-test-assertions": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "example": "<variable:update_data>",
+                "minLength": 1
+              },
+              "example": "<variable:update_data>"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "delete_<BASE_URL>_api_v1_users_123",
+        "summary": "DELETE <BASE_URL>/api/v1/users/123",
+        "description": "Generated from pytest test: test_delete_user",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "204": {
+            "description": "No Content - Successful request with no response body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "x-test-assertions": []
+      }
+    },
+    "<BASE_URL>/api/v1/users/999": {
+      "get": {
+        "operationId": "get_<BASE_URL>_api_v1_users_999",
+        "summary": "GET <BASE_URL>/api/v1/users/999",
+        "description": "Generated from pytest test: test_get_user_not_found",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "User not found",
+                      "minLength": 1,
+                      "enum": [
+                        "User not found"
+                      ]
+                    },
+                    "code": {
+                      "type": "string",
+                      "example": "USER_NOT_FOUND",
+                      "minLength": 1,
+                      "enum": [
+                        "USER_NOT_FOUND"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "code"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found - Resource not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        },
+        "x-test-assertions": []
+      }
+    }
+  },
+  "components": {
+    "schemas": {},
+    "responses": {},
+    "parameters": {},
+    "securitySchemes": {}
+  },
+  "x-test-assertions": {
+    "POST:<BASE_URL>/api/v1/users": [
+      {
+        "test_function": "test_create_user",
+        "file_path": ".\\test_user_api.py",
+        "assertions": [
+          {
+            "type": "status_code",
+            "raw": "response.status_code == 201",
+            "expected_status": 201
+          },
+          {
+            "type": "response_field",
+            "raw": "result['name'] == 'John Doe'",
+            "field": "name",
+            "value": "John Doe",
+            "comparison": "equals",
+            "variable": "<variable:result>"
+          },
+          {
+            "type": "response_field",
+            "raw": "result['email'] == 'john@example.com'",
+            "field": "email",
+            "value": "john@example.com",
+            "comparison": "equals",
+            "variable": "<variable:result>"
+          },
+          {
+            "type": "response_field",
+            "raw": "result['id'] > 0",
+            "field": "id",
+            "value": 0,
+            "comparison": "greater_than",
+            "variable": "<variable:result>"
+          },
+          {
+            "type": "response_field",
+            "raw": "result['active'] == True",
+            "field": "active",
+            "value": true,
+            "comparison": "equals",
+            "variable": "<variable:result>"
+          },
+          {
+            "type": "contains",
+            "raw": "'created_at' in result",
+            "field": "created_at",
+            "container": "<variable:result>"
+          },
+          {
+            "type": "response_length",
+            "raw": "len(result['permissions']) >= 1",
+            "length": 1,
+            "comparison": "greater_than_or_equal",
+            "field": "permissions"
+          }
+        ],
+        "expected_status_codes": [
+          201
+        ],
+        "response_validations": []
+      }
+    ],
+    "GET:<BASE_URL>/api/v1/users/123": [
+      {
+        "test_function": "test_get_user",
+        "file_path": ".\\test_user_api.py",
+        "assertions": [
+          {
+            "type": "status_code",
+            "raw": "response.status_code == 200",
+            "expected_status": 200
+          },
+          {
+            "type": "unknown",
+            "raw": "isinstance(user['name'], str)"
+          },
+          {
+            "type": "response_field",
+            "raw": "user['age'] >= 18",
+            "field": "age",
+            "value": 18,
+            "comparison": "greater_than_or_equal",
+            "variable": "<variable:user>"
+          },
+          {
+            "type": "method_call",
+            "raw": "user['email'].endswith('@example.com')",
+            "method": "endswith",
+            "value": "@example.com"
+          },
+          {
+            "type": "response_type",
+            "raw": "type(user['permissions']) == list",
+            "expected_type": "<variable:list>",
+            "field": "permissions"
+          }
+        ],
+        "expected_status_codes": [
+          200
+        ],
+        "response_validations": []
+      }
+    ],
+    "GET:<BASE_URL>/api/v1/users/999": [
+      {
+        "test_function": "test_get_user_not_found",
+        "file_path": ".\\test_user_api.py",
+        "assertions": [
+          {
+            "type": "status_code",
+            "raw": "response.status_code == 404",
+            "expected_status": 404
+          },
+          {
+            "type": "response_field",
+            "raw": "error['message'] == 'User not found'",
+            "field": "message",
+            "value": "User not found",
+            "comparison": "equals",
+            "variable": "<variable:error>"
+          },
+          {
+            "type": "response_field",
+            "raw": "error['code'] == 'USER_NOT_FOUND'",
+            "field": "code",
+            "value": "USER_NOT_FOUND",
+            "comparison": "equals",
+            "variable": "<variable:error>"
+          }
+        ],
+        "expected_status_codes": [
+          404
+        ],
+        "response_validations": []
+      }
+    ],
+    "PUT:<BASE_URL>/api/v1/users/123": [
+      {
+        "test_function": "test_update_user",
+        "file_path": ".\\test_user_api.py",
+        "assertions": [
+          {
+            "type": "status_code",
+            "raw": "response.status_code == 200",
+            "expected_status": 200
+          },
+          {
+            "type": "response_field",
+            "raw": "updated_user['name'] == 'Jane Doe'",
+            "field": "name",
+            "value": "Jane Doe",
+            "comparison": "equals",
+            "variable": "<variable:updated_user>"
+          },
+          {
+            "type": "response_field",
+            "raw": "updated_user['age'] == 25",
+            "field": "age",
+            "value": 25,
+            "comparison": "equals",
+            "variable": "<variable:updated_user>"
+          }
+        ],
+        "expected_status_codes": [
+          200
+        ],
+        "response_validations": []
+      }
+    ],
+    "DELETE:<BASE_URL>/api/v1/users/123": [
+      {
+        "test_function": "test_delete_user",
+        "file_path": ".\\test_user_api.py",
+        "assertions": [
+          {
+            "type": "status_code",
+            "raw": "response.status_code == 204",
+            "expected_status": 204
+          }
+        ],
+        "expected_status_codes": [
+          204
+        ],
+        "response_validations": []
+      }
+    ]
+  }
+}
